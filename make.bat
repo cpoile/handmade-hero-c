@@ -1,6 +1,6 @@
 @echo off
 
-mkdir c:\Users\chris\work\handmade\build
-pushd c:\Users\chris\work\handmade\build
-cl -Zi -FC ..\code\main.cpp -o handmade User32.lib Gdi32.lib
+mkdir c:\Users\Chris\git\c\handmade-hero\build
+pushd c:\Users\Chris\git\c\handmade-hero\build
+cl -Zi -FC ..\code\main.c /Fohandmade User32.lib Gdi32.lib
 popd
