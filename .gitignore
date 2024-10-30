@@ -80,3 +80,4 @@ build/
 
 # vs
 .vs/
+/.cache/
