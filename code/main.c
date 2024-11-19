@@ -159,7 +159,7 @@ WinMain(HINSTANCE Instance, HINSTANCE PrevInstance, PSTR CommandLine, INT ShowCo
     Win32ResizeDIBSection(1280, 720);
 
     // TODO: check if these matter
-    WindowClass.style       = CS_HREDRAW | CS_VREDRAW;
+    WindowClass.style       = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
     WindowClass.lpfnWndProc = Win32MainWindowCallback;
     WindowClass.hInstance   = Instance;
     // WindowClass.hIcon;
@@ -179,7 +179,7 @@ WinMain(HINSTANCE Instance, HINSTANCE PrevInstance, PSTR CommandLine, INT ShowCo
         return 1;
     }
 
-    // NOTE: since we specified CS_OWNDC (rather, it was defaulted), we can just get one device context and use it
+    // NOTE: since we specified CS_OWNDC, we can just get one device context and use it
     // forever because we are not sharing it with anyone
     HDC deviceContext = GetDC(WindowHandle);
 
